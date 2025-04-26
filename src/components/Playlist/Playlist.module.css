@@ -1,0 +1,228 @@
+/* Breakpoint mobile */
+.playlist {
+    padding: 40px 16px;
+    background: linear-gradient(to right, #f1f1f1, #e5e5e5);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 32px;
+    color: var(--text-color);
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto 32px;
+    padding: 0 12px;
+}
+
+.formGroup {
+    flex: 1;
+}
+
+.select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--text-color);
+    background: white;
+}
+
+.select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 229, 176, 0.1);
+}
+
+.submitButton {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.submitButton:hover {
+    background: #00c99d;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: var(--mobile-grid-template-columns);
+    /* Satu kolom mobile */
+    gap: 24px;
+    padding: 12px;
+}
+
+.songCard {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.closeButton {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(255, 77, 77, 0.9);
+    color: white;
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 2;
+}
+
+.songImage {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.songInfo {
+    padding: 0.75rem;
+}
+
+.songTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.songArtist {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+/* Breakpoint tablet */
+@media (min-width: 768px) {
+    .playlist {
+        padding: 60px 24px;
+    }
+
+    .header {
+        margin-bottom: 32px;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .form {
+        flex-direction: row;
+        /* Kembali ke baris tablet */
+        gap: 16px;
+        max-width: 800px;
+        padding: 0 16px;
+    }
+
+    .select {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .submitButton {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .grid {
+        grid-template-columns: var(--tablet-grid-template-columns);
+        /* Mulai menggunakan grid */
+        gap: 28px;
+        padding: 14px;
+    }
+
+    .songImage {
+        height: 180px;
+    }
+
+    .songInfo {
+        padding: 1rem;
+    }
+
+    .songTitle {
+        font-size: 1.05rem;
+    }
+
+    .songArtist {
+        font-size: 0.9rem;
+    }
+}
+
+/* Breakpoint desktop */
+@media (min-width: 992px) {
+    .playlist {
+        padding: 50px 32px;
+    }
+
+    .header {
+        margin-bottom: 40px;
+    }
+
+    .title {
+        font-size: var(--desktop-title-font-size);
+    }
+
+    .subtitle {
+        font-size: var(--desktop-subtitle-font-size);
+    }
+
+    .grid {
+        grid-template-columns: var(--desktop-grid-template-columns);
+        gap: var(--grid-desktop-gap);
+        padding: var(--grid-desktop-padding);
+    }
+
+    .songImage {
+        height: 200px;
+    }
+
+    .closeButton {
+        width: 24px;
+        height: 24px;
+        font-size: 18px;
+    }
+
+    .songTitle {
+        font-size: 1.1rem;
+    }
+}

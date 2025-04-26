@@ -1,0 +1,128 @@
+/* Breakpoint mobile */
+.header {
+  padding: 14px 16px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.nav {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  color: white;
+  font-size: 24px;
+  margin: 8px 10px;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+  display: flex;
+
+}
+
+.hamburger {
+  display: block;
+  color: white;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu {
+  display: none !important;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--primary-color);
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  list-style: none;
+  text-align: center;
+  z-index: 10;
+}
+
+.menu.open {
+  display: flex !important;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+.menu a:hover {
+  opacity: 0.8;
+}
+
+/* Breakpoint tablet */
+@media (min-width: 768px) {
+  .header {
+    padding: 14px 24px;
+  }
+
+  .nav {
+    max-width: 960px;
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+
+  .hamburger {
+    display: none !important;
+    /* sembunyikan hamburger di tablet ke atas */
+  }
+
+  .menu {
+    display: flex !important;
+    /* tampilkan menu secara horizontal */
+    position: static;
+    background: none;
+    flex-direction: row;
+    gap: 24px;
+    padding: 0;
+  }
+
+  .menu a {
+    font-size: 17px;
+  }
+}
+
+/* Breakpoint desktop */
+@media (min-width: 992px) {
+  .header {
+    padding: 14px 32px;
+  }
+
+  .nav {
+    max-width: 1200px;
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+
+  .menu {
+    gap: 30px;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+}

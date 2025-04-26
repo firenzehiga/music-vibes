@@ -1,0 +1,147 @@
+/* Breakpoint mobile (0px - 767px) */
+.addForm {
+    padding: 40px 16px;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 32px;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #64748b;
+    margin: 0;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.input {
+    padding: 10px 14px;
+    font-size: 16px;
+    border: 2px solid #06ba90;
+    border-radius: 12px;
+    background-color: #fff;
+    color: #1a1a1a;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input::placeholder {
+    color: #9ca3af;
+    opacity: 1;
+}
+
+.input:focus {
+    color: black;
+    box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.1);
+}
+
+.input.error {
+    border-color: #d32f2f;
+}
+
+.error {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #05a77a;
+    transform: translateY(-1px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+/* Breakpoint tablet (min-width: 768px) */
+@media (min-width: 768px) {
+    .addForm {
+        padding: 50px 24px;
+    }
+
+    .formContainer {
+        max-width: 400px;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .input {
+        font-size: 16px;
+        padding: 10px 14px;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+/* Breakpoint desktop (min-width: 992px) */
+@media (min-width: 992px) {
+    .addForm {
+        padding: 50px 32px;
+        /* Kembali ke padding awal */
+    }
+
+    .formContainer {
+        max-width: 450px;
+    }
+
+    .title {
+        font-size: var(--desktop-title-font-size);
+    }
+
+    .subtitle {
+        font-size: var(--desktop-subtitle-font-size);
+    }
+}
