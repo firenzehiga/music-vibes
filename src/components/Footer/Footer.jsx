@@ -41,8 +41,8 @@ export default function Footer() {
 			</div>
 			<div className={styles.copyright}>
 				<p>
-					&copy; {new Date().getFullYear()} Music Vibes - frenzyhiga. Build with
-					React and Love ❤️
+					&copy; {new Date().getFullYear()} Music Vibes - firenzehiga. Build
+					with React and Love ❤️
 				</p>
 			</div>
 		</footer>

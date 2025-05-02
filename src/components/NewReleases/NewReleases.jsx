@@ -3,7 +3,7 @@ import SongCard from "../SongCard/SongCard";
 import styles from "./NewReleases.module.css";
 
 export default function NewReleases(props) {
-	const { songs } = props;
+	const { songs } = props; // props dari parent
 
 	return (
 		<section className={styles.newReleases} id="new">

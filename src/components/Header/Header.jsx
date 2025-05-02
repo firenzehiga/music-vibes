@@ -3,10 +3,12 @@ import styles from "./Header.module.css";
 import { FaBars, FaTimes, FaMusic } from "react-icons/fa";
 
 export default function Header() {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+	// state buat buka/tutup menu saat hamburger diklik
+	const [isMenuOpen, setIsMenuOpen] = useState(false); 
+	
+	// fungsi buat buka/tutup menu
 	const toggleMenu = () => {
-		setIsMenuOpen(!isMenuOpen);
+		setIsMenuOpen(!isMenuOpen); 		
 	};
 
 	return (
