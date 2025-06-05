@@ -1,9 +1,9 @@
 import Home from "./pages/Home";
 // import Hero from "./components/Hero/Hero";
-import NewReleases from "./components/NewReleases/NewReleases";
+import NewReleases from "./pages/NewReleases";
 // import newSongsData from "./utils/constants/newSongData";
-import PopularSongs from "./components/PopularSongs/PopularSongs";
-import Playlist from "./components/Playlist/Playlist";
+import PopularSongs from "./pages/Popular";
+import Playlist from "./pages/Playlist";
 import styles from "./App.module.css";
 import AddSongForm from "./components/AddSongForm/AddSongForm";
 import Layout from "./Layout/index";

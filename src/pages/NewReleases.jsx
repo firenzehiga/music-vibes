@@ -1,5 +1,5 @@
 import SongCard from "../components/SongCard/SongCard";
-import styles from "./components/NewReleases/NewReleases.module.css";
+import styles from "../components/NewReleases/NewReleases.module.css";
 import newSongsData from "../utils/constants/newSongData";
 import { useState } from "react";
 export default function NewReleases() {

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import styles from "../Playlist.module.css";
+import styles from "../components/Playlist/Playlist.module.css";
 
 export default function Playlist(props) {
 	const { songs, allSongs, onAddToPlaylist } = props;
