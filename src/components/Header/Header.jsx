@@ -1,14 +1,15 @@
 import { useState } from "react";
 import styles from "./Header.module.css";
 import { FaBars, FaTimes, FaMusic } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Header() {
 	// state buat buka/tutup menu saat hamburger diklik
-	const [isMenuOpen, setIsMenuOpen] = useState(false); 
-	
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
 	// fungsi buat buka/tutup menu
 	const toggleMenu = () => {
-		setIsMenuOpen(!isMenuOpen); 		
+		setIsMenuOpen(!isMenuOpen);
 	};
 
 	return (
@@ -24,13 +25,16 @@ export default function Header() {
 				</button>
 				<ul className={`${styles.menu} ${isMenuOpen ? styles.open : ""}`}>
 					<li>
-						<a href="#new">New Releases</a>
+						<Link to="/">Home</Link>
 					</li>
 					<li>
-						<a href="#popular">Popular</a>
+						<Link to="/music/new">New Releases</Link>
 					</li>
 					<li>
-						<a href="#playlist">Playlist</a>
+						<Link to="/music/popular">Popular</Link>
+					</li>
+					<li>
+						<Link to="/music/playlist">Playlist</Link>
 					</li>
 				</ul>
 			</nav>
