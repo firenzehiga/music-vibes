@@ -1,7 +1,7 @@
 import Hero from "../components/Hero/Hero";
 // import NewReleases from "../components/NewReleases/NewReleases";
 // import newSongsData from "../utils/constants/newSongData";
-import PopularSongs from "../components/PopularSongs/PopularSongs";
+import PopularSongs from "./Popular";
 // import Playlist from "../components/Playlist/Playlist";
 import styles from "../App.module.css";
 // import AddSongForm from "../components/AddSongForm/AddSongForm";

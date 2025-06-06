@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./Header.module.css";
-import { FaBars, FaTimes, FaMusic } from "react-icons/fa";
+import { FaBars, FaTimes, FaSpotify } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -16,7 +16,7 @@ export default function Header() {
 		<header className={styles.header}>
 			<nav className={styles.nav}>
 				<h1 className={styles.logo}>
-					<FaMusic className={styles.icon} />
+					<FaSpotify className={styles.icon} />
 					Music Vibes
 				</h1>
 				{/* biome-ignore lint/a11y/useButtonType: <explanation> */}

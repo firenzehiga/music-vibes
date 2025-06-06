@@ -1,27 +1,23 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import styles from "../components/Playlist/Playlist.module.css";
+import { useSpotifySearch } from "../hooks/useSpotifyData";
 
 export default function Playlist(props) {
-	const { songs, allSongs, onAddToPlaylist } = props;
-	const [selectedSong, setSelectedSong] = useState(""); // state buat simpan id lagu
+	const { songs, onAddToPlaylist } = props;
+	const [searchQuery, setSearchQuery] = useState(""); // untuk search Spotify
 
-	const filteredSongs = allSongs.filter(
-		(song, index, self) =>
-			index ===
-			self.findIndex((s) => s.title === song.title && s.artist === song.artist) // fungsi biar ga ada lagu duplikat (ada 2 data lagu yg sama di 2 file array)
+	// Spotify search
+	const {
+		results: searchResults,
+		loading: searchLoading,
+		error: searchError,
+	} = useSpotifySearch(searchQuery);
+
+	// Hapus dari hasil search lagu yang sudah ada di playlist (biar tidak double)
+	const filteredSearchResults = searchResults.filter(
+		(song) => !songs.some((p) => p.id === song.id)
 	);
-
-	const handleSubmit = (e) => {
-		// fungsi buat tambahin lagu ke playlist
-		e.preventDefault();
-		if (selectedSong) {
-			// biome-ignore lint/style/useNumberNamespace: <explanation>
-			const song = allSongs.find((s) => s.id === parseInt(selectedSong)); // cari lagu berdasarkan id
-			if (song) onAddToPlaylist(song);
-			setSelectedSong("");
-		}
-	};
 
 	return (
 		<section className={styles.playlist} id="playlist">
@@ -33,26 +29,55 @@ export default function Playlist(props) {
 					</p>
 				</div>
 
-				<form onSubmit={handleSubmit} className={styles.form}>
-					<div className={styles.formGroup}>
-						<select
-							value={selectedSong}
-							onChange={(e) => setSelectedSong(e.target.value)}
-							className={styles.select}>
-							<option value="">Add a song to playlist</option>
-							{filteredSongs.map((song) => (
-								<option key={song.id} value={song.id}>
-									{song.title} - {song.artist}
-								</option>
-							))}
-						</select>
+				{/* SEARCH DARI SPOTIFY */}
+				<div className={styles.form}>
+					<input
+						type="text"
+						value={searchQuery}
+						onChange={(e) => setSearchQuery(e.target.value)}
+						placeholder="Search songs from Spotify..."
+						className={styles.select}
+					/>
+				</div>
+				{searchLoading && (
+					<p style={{ marginTop: 8, color: "#888" }}>Searching...</p>
+				)}
+				{searchError && (
+					<p style={{ marginTop: 8, color: "red" }}>Error: {searchError}</p>
+				)}
+				{filteredSearchResults.length > 0 && (
+					<div className={styles.grid} style={{ marginTop: 16 }}>
+						{filteredSearchResults.map((song) => (
+							<div key={song.id} className={styles.songCard}>
+								<img
+									src={song.image}
+									alt={song.title}
+									className={styles.songImage}
+								/>
+								<div className={styles.songInfo}>
+									<h3 className={styles.songTitle}>{song.title}</h3>
+									<p className={styles.songArtist}>{song.artist}</p>
+									<button
+										onClick={() => onAddToPlaylist(song)}
+										className={styles.submitButton}
+										style={{ marginTop: 12, fontSize: 14 }}>
+										Add to Playlist
+									</button>
+								</div>
+							</div>
+						))}
 					</div>
-					<button type="submit" className={styles.submitButton}>
-						Add to Playlist
-					</button>
-				</form>
+				)}
+				{searchQuery &&
+					!searchLoading &&
+					filteredSearchResults.length === 0 && (
+						<p style={{ marginTop: 8, color: "#888" }}>
+							No result or already in playlist.
+						</p>
+					)}
 
-				<div className={styles.grid}>
+				{/* PLAYLIST */}
+				<div className={styles.grid} style={{ marginTop: 32 }}>
 					{songs.map((song) => (
 						<div key={song.id} className={styles.songCard}>
 							<img

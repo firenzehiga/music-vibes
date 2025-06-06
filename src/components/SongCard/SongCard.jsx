@@ -10,6 +10,7 @@ export default function SongCard(props) {
 	const [isPlaying, setIsPlaying] = useState(false); // state buat tombol play/pause (cuma tombol)
 
 	const handleTogglePlay = () => {
+		alert("Tracks is not available for now"); // alert saat tombol play ditekan
 		setIsPlaying(!isPlaying); // fungsi buat tombol play/pause
 	};
 

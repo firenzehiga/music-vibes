@@ -9,7 +9,7 @@ export default function Hero() {
 					Explore the best music from around the world
 				</p>
 				<a href="#playlist" className={styles.start}>
-					Start Listening
+					Start Browse
 				</a>
 			</div>
 		</section>
