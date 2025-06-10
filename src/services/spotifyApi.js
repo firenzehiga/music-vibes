@@ -87,6 +87,11 @@ class SpotifyAPI {
 		return this.apiCall(endpoint);
 	}
 
+	async getPlaylistTracks(playlistId, limit = 50) {
+		const endpoint = `/playlists/${playlistId}/tracks?limit=${limit}&market=US`;
+		return this.apiCall(endpoint);
+	}
+
 	async searchTracks(query, limit = 20) {
 		const endpoint = `/search?q=${encodeURIComponent(
 			query

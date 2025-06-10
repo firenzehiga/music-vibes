@@ -1,4 +1,4 @@
-import Hero from "../components/Hero/Hero";
+import Hero from "../components/Hero/HeroStyled";
 // import NewReleases from "../components/NewReleases/NewReleases";
 // import newSongsData from "../utils/constants/newSongData";
 import PopularSongs from "./Popular";
