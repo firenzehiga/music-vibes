@@ -1,6 +1,5 @@
 import styled from "styled-components";
-
-const FooterSection = styled.footer`
+export const FooterSection = styled.footer`
 	background: linear-gradient(
 		90deg,
 		var(--secondary-color),
@@ -18,7 +17,7 @@ const FooterSection = styled.footer`
 	}
 `;
 
-const Container = styled.div`
+export const Container = styled.div`
 	max-width: 1200px;
 	margin: 0 auto;
 	display: grid;
@@ -35,7 +34,7 @@ const Container = styled.div`
 	}
 `;
 
-const Section = styled.div`
+export const Section = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 0.75rem;
@@ -48,7 +47,7 @@ const Section = styled.div`
 	}
 `;
 
-const Title = styled.h3`
+export const Title = styled.h3`
 	font-size: 1.25rem;
 	font-weight: 600;
 	margin-bottom: 0.75rem;
@@ -61,7 +60,7 @@ const Title = styled.h3`
 	}
 `;
 
-const Links = styled.ul`
+export const Links = styled.ul`
 	list-style: none;
 	display: flex;
 	flex-direction: column;
@@ -75,7 +74,7 @@ const Links = styled.ul`
 	}
 `;
 
-const LinkItem = styled.a`
+export const LinkItem = styled.a`
 	color: white;
 	text-decoration: none;
 	opacity: 0.8;
@@ -94,7 +93,7 @@ const LinkItem = styled.a`
 	}
 `;
 
-const Copyright = styled.div`
+export const Copyright = styled.div`
 	text-align: center;
 	margin-top: 2rem;
 	padding-top: 1.5rem;
@@ -112,52 +111,3 @@ const Copyright = styled.div`
 		padding-top: 2rem;
 	}
 `;
-
-export default function Footer() {
-	return (
-		<FooterSection>
-			<Container>
-				<Section>
-					<Title>Music Vibes</Title>
-					<p>
-						Your ultimate destination for music discovery and entertainment.
-					</p>
-				</Section>
-				<Section>
-					<Title>Quick Links</Title>
-					<Links>
-						<li>
-							<LinkItem href="#new">New Releases</LinkItem>
-						</li>
-						<li>
-							<LinkItem href="#popular">Popular</LinkItem>
-						</li>
-						<li>
-							<LinkItem href="#playlist">Playlist</LinkItem>
-						</li>
-					</Links>
-				</Section>
-				<Section>
-					<Title>Connect</Title>
-					<Links>
-						<li>
-							<LinkItem href="#facebook">LinkedIn</LinkItem>
-						</li>
-						<li>
-							<LinkItem href="#twitter">Tiktok</LinkItem>
-						</li>
-						<li>
-							<LinkItem href="#instagram">Instagram</LinkItem>
-						</li>
-					</Links>
-				</Section>
-			</Container>
-			<Copyright>
-				<p>
-					&copy; {new Date().getFullYear()} Music Vibes - firenzehiga. Build
-					with React and Love ❤️
-				</p>
-			</Copyright>
-		</FooterSection>
-	);
-}

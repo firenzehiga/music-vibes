@@ -1,5 +1,5 @@
-import Navbar from "../components/Header/HeaderStyled";
-import Footer from "../components/Footer/FooterStyled";
+import Navbar from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 

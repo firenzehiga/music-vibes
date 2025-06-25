@@ -1,11 +1,7 @@
-import { useState } from "react";
 import styled from "styled-components";
-import { FaBars, FaTimes, FaSpotify } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaSpotify } from "react-icons/fa";
 
-// Styled Components
-
-const HeaderSection = styled.header`
+export const HeaderSection = styled.header`
 	padding: 14px 16px;
 	background: linear-gradient(
 		90deg,
@@ -23,7 +19,7 @@ const HeaderSection = styled.header`
 	}
 `;
 
-const Nav = styled.nav`
+export const Nav = styled.nav`
 	max-width: 100%;
 	margin: 0 auto;
 	display: flex;
@@ -38,7 +34,7 @@ const Nav = styled.nav`
 	}
 `;
 
-const Logo = styled.h1`
+export const Logo = styled.h1`
 	color: white;
 	font-size: 24px;
 	font-weight: 700;
@@ -52,7 +48,7 @@ const Logo = styled.h1`
 	}
 `;
 
-const SpotifyIcon = styled(FaSpotify)`
+export const SpotifyIcon = styled(FaSpotify)`
 	color: white;
 	font-size: 24px;
 	margin: 8px 10px 8px 0;
@@ -62,7 +58,7 @@ const SpotifyIcon = styled(FaSpotify)`
 	}
 `;
 
-const Hamburger = styled.button`
+export const Hamburger = styled.button`
 	display: block;
 	color: white;
 	font-size: 24px;
@@ -75,7 +71,7 @@ const Hamburger = styled.button`
 	}
 `;
 
-const Menu = styled.ul`
+export const Menu = styled.ul`
 	display: ${({ open }) => (open ? "flex" : "none")};
 	position: absolute;
 	top: 100%;
@@ -120,50 +116,3 @@ const Menu = styled.ul`
 		}
 	}
 `;
-
-export default function Header() {
-	// state buat buka/tutup menu saat hamburger diklik
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-	// fungsi buat buka/tutup menu
-	const toggleMenu = () => {
-		setIsMenuOpen((open) => !open);
-	};
-
-	return (
-		<HeaderSection>
-			<Nav>
-				<Logo>
-					<SpotifyIcon />
-					Music Vibes
-				</Logo>
-				{/* biome-ignore lint/a11y/useButtonType: <explanation> */}
-				<Hamburger onClick={toggleMenu} aria-label="Toggle menu">
-					{isMenuOpen ? <FaTimes /> : <FaBars />}
-				</Hamburger>
-				<Menu open={isMenuOpen}>
-					<li>
-						<Link to="/" onClick={() => setIsMenuOpen(false)}>
-							Home
-						</Link>
-					</li>
-					<li>
-						<Link to="/music/new" onClick={() => setIsMenuOpen(false)}>
-							New Releases
-						</Link>
-					</li>
-					<li>
-						<Link to="/music/popular" onClick={() => setIsMenuOpen(false)}>
-							Popular
-						</Link>
-					</li>
-					<li>
-						<Link to="/music/playlist" onClick={() => setIsMenuOpen(false)}>
-							Playlist
-						</Link>
-					</li>
-				</Menu>
-			</Nav>
-		</HeaderSection>
-	);
-}

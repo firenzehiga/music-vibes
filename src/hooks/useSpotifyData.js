@@ -11,7 +11,7 @@ export const useNewReleases = () => {
 		const fetchNewReleases = async () => {
 			try {
 				setLoading(true);
-				const result = await spotifyApi.getNewReleases(20);
+				const result = await spotifyApi.getNewReleases(5);
 
 				// Transform data to match existing structure
 				const transformedData = result.albums.items.map((album) => ({
@@ -19,7 +19,6 @@ export const useNewReleases = () => {
 					image: album.images[0]?.url || "",
 					title: album.name,
 					artist: album.artists.map((artist) => artist.name).join(", "),
-					// Tambah field lain jika perlu
 					release_date: album.release_date,
 					total_tracks: album.total_tracks,
 					external_urls: album.external_urls,

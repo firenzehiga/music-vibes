@@ -38,7 +38,7 @@ class SpotifyAPI {
 				localStorage.setItem("spotify_access_token", this.accessToken);
 				localStorage.setItem("spotify_token_expiry", this.tokenExpiry);
 
-				// Update axios default headers
+				// Untuk set header Authorization pada axios instance
 				this.api.defaults.headers.common[
 					"Authorization"
 				] = `Bearer ${this.accessToken}`;
