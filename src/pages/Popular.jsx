@@ -1,5 +1,5 @@
 import SongCard from "../components/SongCard/SongCard";
-import SkeletonCard from "../components/Skeleton/SkeletonCardStyled";
+import SkeletonCard from "../components/Skeleton/SkeletonCard";
 import { useState } from "react";
 import { usePopularSongs } from "../hooks/useSpotifyData";
 import {

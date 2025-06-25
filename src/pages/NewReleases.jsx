@@ -27,7 +27,7 @@ export default function NewReleases() {
 							color: "white",
 							textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
 						}}>
-						🎵 Latest Drops
+						🎵 Latest Songs
 					</h2>
 					<div
 						style={{
@@ -36,7 +36,7 @@ export default function NewReleases() {
 							maxWidth: 600,
 							margin: "0 auto",
 						}}>
-						Fresh releases hitting the charts this week
+						Fresh releases hitting the charts
 					</div>
 					<Spinner />
 				</div>
@@ -74,7 +74,7 @@ export default function NewReleases() {
 							color: "white",
 							textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
 						}}>
-						🎵 Latest Drops
+						🎵 Latest Songs
 					</h2>
 					<div
 						style={{
@@ -83,7 +83,7 @@ export default function NewReleases() {
 							maxWidth: 600,
 							margin: "0 auto",
 						}}>
-						Fresh releases hitting the charts this week
+						Fresh releases hitting the charts
 					</div>
 				</div>
 				<TimelineContainer>
