@@ -82,16 +82,6 @@ class SpotifyAPI {
 		return this.apiCall(endpoint);
 	}
 
-	async getFeaturedPlaylists(limit = 20) {
-		const endpoint = `/browse/featured-playlists?limit=${limit}&market=US`;
-		return this.apiCall(endpoint);
-	}
-
-	async getPlaylistTracks(playlistId, limit = 50) {
-		const endpoint = `/playlists/${playlistId}/tracks?limit=${limit}&market=US`;
-		return this.apiCall(endpoint);
-	}
-
 	async searchTracks(query, limit = 20) {
 		const endpoint = `/search?q=${encodeURIComponent(
 			query
@@ -124,21 +114,10 @@ class SpotifyAPI {
 		}
 	}
 
-	// Method tambahan untuk get track details
-	async getTrack(trackId) {
-		const endpoint = `/tracks/${trackId}`;
-		return this.apiCall(endpoint);
-	}
-
+	
 	// Method untuk get artist details
 	async getArtist(artistId) {
 		const endpoint = `/artists/${artistId}`;
-		return this.apiCall(endpoint);
-	}
-
-	// Method untuk get album details
-	async getAlbum(albumId) {
-		const endpoint = `/albums/${albumId}`;
 		return this.apiCall(endpoint);
 	}
 
@@ -181,4 +160,3 @@ class SpotifyAPI {
 }
 
 export default new SpotifyAPI();
-// export const useSpotifyData = () => {
