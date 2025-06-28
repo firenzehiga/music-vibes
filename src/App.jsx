@@ -9,7 +9,7 @@ import { useState } from "react";
 import newSongsData from "./utils/constants/newSongData";
 import popularSongsData from "./utils/constants/popularSongData";
 import playlistData from "./utils/constants/playlistData";
-import Layout from "./Layout";
+import Layout from "./Layout/Container";
 
 function App() {
 	const [playlist, setPlaylist] = useState(playlistData);
