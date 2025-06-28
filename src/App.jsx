@@ -4,12 +4,12 @@ import PopularSongs from "./pages/Popular";
 import Playlist from "./pages/Playlist";
 import styles from "./App.module.css";
 import AddSongForm from "./components/AddSongForm/AddSongForm";
-import Layout from "./Layout/index";
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import newSongsData from "./utils/constants/newSongData";
 import popularSongsData from "./utils/constants/popularSongData";
 import playlistData from "./utils/constants/playlistData";
+import Layout from "./Layout";
 
 function App() {
 	const [playlist, setPlaylist] = useState(playlistData);
