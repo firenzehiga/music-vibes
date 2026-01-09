@@ -9,7 +9,9 @@ export const HeaderSection = styled.header`
 		var(--secondary-color)
 	);
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	position: relative;
+	position: sticky;
+	top: 0;
+	z-index: 100;
 
 	@media (min-width: 768px) {
 		padding: 14px 24px;
